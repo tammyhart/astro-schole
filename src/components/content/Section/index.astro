@@ -1,0 +1,65 @@
+---
+const { heading } = Astro.props
+
+const preventOrphans = (text: string) => {
+    const words = text.split(" ")
+    const wordCount = words.length
+
+    if (wordCount < 4) return text
+
+    const initialWords = words.slice(0, wordCount - 2);
+  
+    const secondToLastWord = words[wordCount - 2]
+    const lastWord = words[wordCount - 1]
+
+    return `${initialWords.join(' ')} ${secondToLastWord}\u00A0${lastWord}`;
+}
+
+import Content from './Content'
+---
+
+<section>
+    <Content client:load>
+        <h2>{preventOrphans(heading)}</h2>
+        <slot />
+    </Content>
+</section>
+
+<style>
+    section {
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.25rem;
+            padding: var(--h-space);
+
+            opacity: 0;
+            transform: translateY(4rem);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    
+            background: linear-gradient(to bottom, var(--shade) 0, var(--read-contrast) 5rem);
+
+            &.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            @media (min-width: 50rem) {
+                gap: 3rem;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        line-height: 1.25;
+
+        @media (min-width: 50rem) {
+            font-size: 2.5rem;
+        }
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+</style>

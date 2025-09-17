@@ -1,0 +1,63 @@
+---
+const { word } = Astro.props;
+---
+
+<span class="annotation">
+  <b>{word}</b>
+  
+  <span class="tooltip">
+    <slot />
+  </span>
+</span>
+
+<style>
+  .annotation {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    transition: 0.3s ease-in-out;
+
+    b {
+      background: var(--sky);
+      border: 0.0625rem dashed var(--spark);
+      color: var(--spark);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      transition: inherit;
+    }
+
+    .tooltip {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transform: translateY(2rem); /* Centers the tooltip and moves it up */
+      min-width: 50vw;
+
+      /* Initial state: hidden */
+      opacity: 0;
+      visibility: hidden;
+      transition: inherit;
+
+      /* Basic tooltip styling */
+      background-color: var(--read-contrast);
+      border: 0.125rem solid var(--verdant);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1rem 1rem -1rem rgba(0,0,0,0.5);
+      z-index: 750;
+    }
+
+    &:hover {
+      b {
+        background: var(--spark);
+        color: var(--read-contrast);
+      }
+
+      .tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0.5rem); 
+      }
+    }
+  }
+</style>

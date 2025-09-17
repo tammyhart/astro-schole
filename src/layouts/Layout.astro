@@ -1,3 +1,8 @@
+---
+import '@fontsource-variable/eb-garamond';
+import '@fontsource-variable/lexend';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +10,71 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Contemplative Learning Interface</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
+<style is:global>
+	:root {
+		/* fonts */
+		--serif: "EB Garamond Variable", serif;
+		--sans-serif: "Lexend Variable", sans-serif;
+
+		/* colors */
+		--read: #444444;
+		--read-contrast: #FFFFFF;
+		--calm: #384B70;
+		--spark: #406ABF;
+		--earth: #705138;
+		--verdant: #82BF40;
+		--shade: #EEEEEE;
+		--sky: #D9E1F2;
+		--page: #E5D7CC;
+
+		/* dimensions */
+		--h-space: 3rem;
+
+		@media (min-width: 50rem) {
+			--h-space: 7.5rem;
+		}
+	}
+
+	*, *::before, *::after {
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body, html, input, button {
+		font: 1rem/1.5 var(--sans-serif);
+		color: var(--read);
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: linear-gradient(to top, var(--earth), var(--read-contrast)) fixed;
+	}
+
+	img, svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	ul, ol, li {
+		list-style: none;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--serif);
+	}
+
+	button {
+		background: none;
+		border: none;
 	}
 </style>

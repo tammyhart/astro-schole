@@ -1,0 +1,25 @@
+<div class="key">
+  <h3>Key Design Principal</h3>
+  <slot />
+</div>
+
+<style>
+  .key {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+
+    background: var(--page);
+    border-left: 0.5rem solid var(--earth);
+
+    h3 {
+      color: var(--earth);
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-weight: 300;
+    }
+  }
+</style>
