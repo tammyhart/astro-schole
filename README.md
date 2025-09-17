@@ -1,46 +1,46 @@
-# Astro Starter Kit: Basics
+# Astro-Schole: A Contemplative Reading Interface
 
-```sh
-npm create astro@latest -- --template basics
+This project is a take-home challenge to create an immersive digital reading experience inspired by the principles of Scholé, or "leisurely learning." The goal is to design an interface that encourages deep, contemplative engagement with content through thoughtful design and subtle micro-animations.
+
+## Key Features
+
+- **Contemplative Design:** The layout is clean and spacious, minimizing distractions to create a focused reading environment. It features generous whitespace and an elegant, classical feel.
+- **Responsive and Accessible:** Built with a mobile-first approach, the interface ensures a seamless reading experience on all devices. It uses semantic HTML and is designed with accessibility in mind.
+- **Subtle Micro-Animations:** The project includes purposeful animations that serve the user, not distract them.
+- **Scroll-triggered reveals:** Content gently fades into view as the user scrolls, guiding their attention.
+- **Progressive disclosure:** Supplementary content can be expanded or collapsed smoothly.
+
+## Technical Stack
+
+- **Framework:** Astro for a modern, performance-focused static site.
+- **Styling:** Modern CSS with Flexbox, Grid, and Custom Properties.
+- **Functionality:** Intersection Observer for scroll-triggered animations.
+
+## Getting Started
+
+To run this project, ensure you have Node.js installed.
+
+1. Clone the repository:
+
+```
+git clone https://github.com/tammyhart/astro-schole.git
+cd astro-schole
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2. Install dependencies:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```
+npm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Run the development server:
 
-## 🧞 Commands
+```
+npm run dev
+```
 
-All commands are run from the root of the project, from a terminal:
+### Available Commands
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- `npm run dev`: Starts a local development server.
+- `npm run build`: Compiles the project for production.
+- `npm run preview`: Previews the production build locally.
